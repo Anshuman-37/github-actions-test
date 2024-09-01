@@ -9,7 +9,7 @@ jobs:
     steps:
       - run: sleep 5
       - name: Notify
-        uses: jmg-duarte/workflow-notify-discord@v1
+        uses: Anshuman-37/github-actions-test@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           discord-webhook: https://discord.com/api/webhooks/1279361434387615754/9QhLQtx-iBW6t1Dg-hIe2AxbsMAmSDSQTfJ99WzZst06CP0KiREn3N4aAg9TK9hdh8I8
