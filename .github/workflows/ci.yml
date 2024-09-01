@@ -2,12 +2,19 @@ name: Build and Test
 on: [ push,workflow_dispatch ]
 
 jobs:
+  delay-job:
+    name: Delay Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delay
+        run: sleep 5
+
   notify:
     name: Notify Discord
     runs-on: ubuntu-latest
     if: ${{ always() }} # You always want to be notified: success, failure, or cancelled
+    needs: delay-job
     steps:
-      - run: sleep 5
       - name: Notify
         uses: Anshuman-37/github-actions-test@main
         with:
