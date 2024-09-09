@@ -33,12 +33,11 @@ jobs:
   notify:
     name: Notify Discord
     runs-on: ubuntu-latest
-    if: ${{ always() }} # You always want to be notified: success, failure, or cancelled
+    if: ${{ always() }}
     needs: run-index
     steps:
       - name: Notify
-        uses: Anshuman-37/github-actions-test@main
+        uses: Anshuman-37/discord-workflow-status@v1
         with:
-          strict: false
           github-token: ${{ secrets.GITHUB_TOKEN }}
           discord-webhook: https://discord.com/api/webhooks/1279361434387615754/9QhLQtx-iBW6t1Dg-hIe2AxbsMAmSDSQTfJ99WzZst06CP0KiREn3N4aAg9TK9hdh8I8
