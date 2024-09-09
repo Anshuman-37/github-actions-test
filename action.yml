@@ -10,6 +10,7 @@ inputs:
     required: false
     default: true
 
+
   github-token:
     description: "GitHub Token"
     required: true
