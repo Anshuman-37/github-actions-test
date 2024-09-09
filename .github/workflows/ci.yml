@@ -8,12 +8,29 @@ jobs:
     steps:
       - name: Delay
         run: sleep 5
+  run-index:
+    name: Run index.js
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run index.js
+        run: node index.js
 
   notify:
     name: Notify Discord
     runs-on: ubuntu-latest
     if: ${{ always() }} # You always want to be notified: success, failure, or cancelled
-    needs: delay-job
+    needs: [delay-job, run-index]
     steps:
       - name: Notify
         uses: Anshuman-37/github-actions-test@main
