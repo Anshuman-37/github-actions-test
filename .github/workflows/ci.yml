@@ -27,8 +27,8 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Run index.js
-        run: node index.js
+      - name: Run index.js via npm script
+        run: npm run runCode
 
   notify:
     name: Notify Discord
