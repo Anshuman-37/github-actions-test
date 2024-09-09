@@ -37,7 +37,7 @@ jobs:
     needs: run-index
     steps:
       - name: Notify
-        uses: Anshuman-37/discord-workflow-status@maater
+        uses: Anshuman-37/discord-workflow-status@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           discord-webhook: https://discord.com/api/webhooks/1279361434387615754/9QhLQtx-iBW6t1Dg-hIe2AxbsMAmSDSQTfJ99WzZst06CP0KiREn3N4aAg9TK9hdh8I8
