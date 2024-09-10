@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Delay
         run: |
-          sleep 65
+          sleep 130
           exit 1 
 
   run-index:
